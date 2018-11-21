@@ -1,13 +1,14 @@
 package com.example.joaomoura.bookstore;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.example.joaomoura.bookstore.Adapter.BookStoreAdapter;
 import com.example.joaomoura.bookstore.Adapter.SetOnClickListBook;
@@ -29,8 +30,12 @@ public class SecondFragment extends Fragment implements SetOnClickListBook {
     private RecyclerView.LayoutManager layoutManager;
     private Books books;
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        view = inflater.inflate(R.layout.fragment_,container,false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup rvLivros, Bundle savedInstanceState){
+        view = LayoutInflater.from(rvLivros.getContext()).inflate(R.layout.fragment_,lvBook,false);
+        lvBook.setHasFixedSize(true);
+        LinearLayoutManager manager = new LinearLayoutManager(getActivity());
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        lvBook.setLayoutManager(manager);
         return view;
     }
 

@@ -10,12 +10,13 @@ import android.widget.TextView;
 
 import com.example.joaomoura.bookstore.R;
 import com.example.joaomoura.bookstore.model.Book;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class BookStoreAdapter extends RecyclerView.Adapter<BookStoreAdapter.BookViewHolder> {
 private Context context;
-private List<String> livros;
+private List<Book> livros;
 public static SetOnClickListBook setOnClickListBook;
 public BookStoreAdapter(Context context, List<Book> livros, SetOnClickListBook setOnClickListBook){
     this.context=context;
@@ -26,7 +27,7 @@ public static class BookViewHolder extends RecyclerView.ViewHolder implements Vi
     ImageView ivImagemLivro;
     TextView tvNomeLivro;
     TextView tvDataLivro;
-
+    TextView tvDetailLivro;
     public BookViewHolder(View itemView){
         super(itemView);
         ivImagemLivro =(ImageView) itemView.findViewById(R.id.ivImagemLivro);
@@ -47,8 +48,11 @@ public BookViewHolder onCreateViewHolder (ViewGroup viewGroup, int i){
     return bookViewHolder;
 }
 
-    public void onBindViewHolder( BookViewHolder bookViewHolder, int i) {
-        bookViewHolder.tvNomeLivro.setText(livros.get(i));
+    public void onBindViewHolder( BookViewHolder bookViewHolder, int position) {
+        bookViewHolder.tvNomeLivro.setText(livros.get(position).getTitle());
+        bookViewHolder.tvDataLivro.setText(livros.get(position).getPublishedDate());
+        bookViewHolder.tvDetailLivro.setText(livros.get(position).getDescription());
+        Picasso.get().load(livros.get(position).getThumbnail()).into(bookViewHolder.ivImagemLivro);
 
     }
 

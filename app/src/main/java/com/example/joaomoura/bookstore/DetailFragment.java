@@ -1,7 +1,7 @@
 package com.example.joaomoura.bookstore;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +16,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -31,8 +32,8 @@ public class DetailFragment extends Fragment {
 
     }
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragments_detail, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup rvLivros, Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragments_detail, rvLivros, false);
         return view;
     }
 
@@ -50,7 +51,7 @@ public class DetailFragment extends Fragment {
 
         Call<List<Book>> bookCall = detailBook.getDetailBook(id);
 
-        bookCall.enqueue(new Call<List<Book>>() {
+        bookCall.enqueue(new Callback<List<Book>>() {
             public void onResponse(Call<List<Book>> call, Response<List<Book>> response){
                 if(response.isSuccessful()){
                     Log.d("RETROFIT","DEU CARAIO!!!");
