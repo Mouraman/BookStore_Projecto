@@ -1,11 +1,26 @@
 package com.example.joaomoura.bookstore.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Book {
-private String id ;
-private String title;
-private String publishedDate;
-private String description;
+    @SerializedName("id")
+    @Expose
+    private String id;
+    @SerializedName("title")
+    @Expose
+    private String title;
+    @SerializedName("publishedDate")
+    @Expose
+    private String publishedDate;
+    @SerializedName("description")
+    @Expose
+    private String description;
+    @SerializedName("smallThumbnaill")
+    @Expose
 private String smallThumbnail;
+    @SerializedName("Thumbnail")
+    @Expose
 private String thumbnail;
 
     public String getId() {

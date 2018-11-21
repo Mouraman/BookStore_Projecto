@@ -27,7 +27,7 @@ public static class BookViewHolder extends RecyclerView.ViewHolder implements Vi
     ImageView ivImagemLivro;
     TextView tvNomeLivro;
     TextView tvDataLivro;
-    TextView tvDetailLivro;
+    TextView tvDetail;
     public BookViewHolder(View itemView){
         super(itemView);
         ivImagemLivro =(ImageView) itemView.findViewById(R.id.ivImagemLivro);
@@ -51,7 +51,7 @@ public BookViewHolder onCreateViewHolder (ViewGroup viewGroup, int i){
     public void onBindViewHolder( BookViewHolder bookViewHolder, int position) {
         bookViewHolder.tvNomeLivro.setText(livros.get(position).getTitle());
         bookViewHolder.tvDataLivro.setText(livros.get(position).getPublishedDate());
-        bookViewHolder.tvDetailLivro.setText(livros.get(position).getDescription());
+        bookViewHolder.tvDetail.setText(livros.get(position).getDescription());
         Picasso.get().load(livros.get(position).getThumbnail()).into(bookViewHolder.ivImagemLivro);
 
     }
