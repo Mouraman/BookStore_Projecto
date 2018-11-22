@@ -12,6 +12,8 @@ import com.example.joaomoura.bookstore.R;
 import com.example.joaomoura.bookstore.model.Book;
 import com.squareup.picasso.Picasso;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class BookStoreAdapter extends RecyclerView.Adapter<BookStoreAdapter.BookViewHolder> {
@@ -33,6 +35,7 @@ public static class BookViewHolder extends RecyclerView.ViewHolder implements Vi
         ivImagemLivro =(ImageView) itemView.findViewById(R.id.ivImagemLivro);
         tvNomeLivro=(TextView) itemView.findViewById(R.id.tvNomeLivro);
         tvDataLivro= (TextView) itemView.findViewById(R.id.tvDataLivro);
+        tvDetail = (TextView) itemView.findViewById(R.id.tvDetail);
         itemView.setOnClickListener(this);
     }
 
