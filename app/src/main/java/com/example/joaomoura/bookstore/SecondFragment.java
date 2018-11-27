@@ -40,7 +40,7 @@ public class SecondFragment extends Fragment implements SetOnClickListBook {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        listBook = (RecyclerView) view.findViewById(R.id.listBook);
+        listBook = (RecyclerView) view.findViewById(R.id.rvLivros);
         listBook.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());
         listBook.setLayoutManager(layoutManager);

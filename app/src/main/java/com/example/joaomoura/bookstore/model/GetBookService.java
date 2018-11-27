@@ -12,6 +12,6 @@ public interface GetBookService {
 
     // este e o metodo quando existe uma query
     @GET("volumes?")
-    Call<Books> getListBook(@Query("q") String tema );
+    Call<Books> getListBook(@Query("q") String id );
 
 }

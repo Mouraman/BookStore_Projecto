@@ -43,7 +43,7 @@ public class DetailFragment extends Fragment {
         String id = getArguments().getString("id");
         Retrofit retrofit = new Retrofit.
                 Builder().
-                baseUrl("https://www.googleapis.com/books/v1/volumes?").
+                baseUrl("https://www.googleapis.com/books/v1/volumes/").
                 addConverterFactory(GsonConverterFactory.create()).
                 build();
 

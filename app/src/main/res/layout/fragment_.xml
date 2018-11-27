@@ -8,9 +8,9 @@ android:layout_height="match_parent"
 tools:context=".SecondFragment">
 
 <android.support.v7.widget.RecyclerView
-    android:id="@+id/listBook"
+    android:id="@+id/rvLivros"
     android:scrollbars="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
-
+<include layout="@layout/fragments_detail"/>
 </LinearLayout>
