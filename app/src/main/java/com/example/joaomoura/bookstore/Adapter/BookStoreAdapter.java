@@ -46,7 +46,7 @@ public static class BookViewHolder extends RecyclerView.ViewHolder implements Vi
 }
 
 public BookViewHolder onCreateViewHolder (ViewGroup viewGroup, int i){
-    View view = LayoutInflater.from(context).inflate(R.layout.item,viewGroup,false);
+    View view = LayoutInflater.from(context).inflate(R.layout.item_inside,viewGroup,false);
     BookViewHolder bookViewHolder = new BookViewHolder(view);
     return bookViewHolder;
 }
