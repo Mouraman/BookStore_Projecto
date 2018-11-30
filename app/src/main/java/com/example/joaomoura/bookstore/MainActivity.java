@@ -12,12 +12,11 @@ import com.example.joaomoura.bookstore.Adapter.BookStoreAdapter;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView rvLivros;
-    private RecyclerView.LayoutManager layoutManager;
     android.app.FragmentManager manager;
     android.app.FragmentTransaction transaction;
-    private BookStoreAdapter adapter;
-    private List<String> livros;
+
+   //TODO REALM DB
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         manager = getFragmentManager();
         transaction = manager.beginTransaction();
 
-        transaction.add(R.id.rvLivros, new SecondFragment());
+        transaction.add(R.id.container, new SecondFragment());
 
         transaction.commit();
 
