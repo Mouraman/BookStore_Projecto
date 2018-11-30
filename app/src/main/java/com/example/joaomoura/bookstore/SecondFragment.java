@@ -29,7 +29,7 @@ public class SecondFragment extends Fragment implements SetOnClickListBook {
     private RecyclerView listBook;
     private RecyclerView.LayoutManager layoutManager;
     private Books books;
-    private String tema;
+    private String id;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup rvLivros, Bundle savedInstanceState) {
         view = LayoutInflater.from(rvLivros.getContext()).inflate(R.layout.fragment_, rvLivros, false);
