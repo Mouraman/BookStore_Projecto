@@ -75,7 +75,7 @@ private void prepareView (Book book){
         tvDescricao = (TextView) view.findViewById(R.id.tvDetail);
         ivImagemLivro=(ImageView)view.findViewById(R.id.ivImagemLivro);
 
-        tvNomeLivro.setText(book.getTitle());
+        tvNomeLivro.setText(book.get);
         tvDataLivro.setText(book.getPublishedDate());
         tvDescricao.setText(book.getDescription());
     Picasso.get().load(book.getThumbnail).into(ivImagemLivro);
