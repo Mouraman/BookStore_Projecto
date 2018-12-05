@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.joaomoura.bookstore.model.Book;
+import com.example.joaomoura.bookstore.model.Books;
 import com.example.joaomoura.bookstore.model.GetDetailBook;
 import com.squareup.picasso.Picasso;
 
@@ -77,7 +78,7 @@ private void prepareView (Book book){
         tvNomeLivro.setText(book.getTitle());
         tvDataLivro.setText(book.getPublishedDate());
         tvDescricao.setText(book.getDescription());
-    Picasso.get().load(book.getThumbnail()).into(ivImagemLivro);
+    Picasso.get().load(book.getThumbnail).into(ivImagemLivro);
 }
 
 }
