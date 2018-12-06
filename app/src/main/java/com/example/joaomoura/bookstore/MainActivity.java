@@ -1,15 +1,9 @@
 package com.example.joaomoura.bookstore;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 
-import com.example.joaomoura.bookstore.Adapter.BookStoreAdapter;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     android.app.FragmentManager manager;

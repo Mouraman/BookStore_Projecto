@@ -52,7 +52,9 @@ public class SecondFragment extends Fragment implements SetOnClickListBook {
 
     private void preferences(String texto) {
         Retrofit retrofit = new Retrofit.
-                Builder().addConverterFactory(GsonConverterFactory.create()).baseUrl("https://www.googleapis.com/books/v1/volumes/").build();
+                Builder().
+                addConverterFactory(GsonConverterFactory.create()).
+                baseUrl("https://www.googleapis.com/books/v1/volumes/").build();
 
 
         GetBookService bookService =retrofit.create(GetBookService.class);
@@ -77,7 +79,8 @@ public class SecondFragment extends Fragment implements SetOnClickListBook {
 
             @Override
             public void onFailure(Call<Books> call, Throwable t) {
-
+                Log.d("RETROFIT", "FUDEUUUU");
+                Log.d("RETROFIT",t.getMessage());
             }
         });
 

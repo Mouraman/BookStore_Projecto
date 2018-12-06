@@ -70,7 +70,7 @@ public class DetailFragment extends Fragment {
 
 
     }
-private void prepareView (VolumeInfo book){
+private void prepareView (Book book){
         tvNomeLivro = (TextView) view.findViewById(R.id.tvNomeDetail);
         tvDataLivro = (TextView) view.findViewById(R.id.tvDateDetail);
         tvDescricao = (TextView) view.findViewById(R.id.tvDetail);
