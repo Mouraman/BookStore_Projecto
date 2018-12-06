@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.joaomoura.bookstore.model.Book;
 import com.example.joaomoura.bookstore.model.Books;
 import com.example.joaomoura.bookstore.model.GetDetailBook;
+import com.example.joaomoura.bookstore.model.VolumeInfo;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -50,7 +51,7 @@ public class DetailFragment extends Fragment {
 
         GetDetailBook detailBook = retrofit.create(GetDetailBook.class);
 
-        Call<List<Book>> bookCall = detailBook.getDetailBook(id);
+        Call<List<Book>> bookCall = detailBook.getDetailBook(" ");
 
         bookCall.enqueue(new Callback<List<Book>>() {
             public void onResponse(Call<List<Book>> call, Response<List<Book>> response){
@@ -69,16 +70,16 @@ public class DetailFragment extends Fragment {
 
 
     }
-private void prepareView (Book book){
+private void prepareView (VolumeInfo book){
         tvNomeLivro = (TextView) view.findViewById(R.id.tvNomeDetail);
         tvDataLivro = (TextView) view.findViewById(R.id.tvDateDetail);
         tvDescricao = (TextView) view.findViewById(R.id.tvDetail);
         ivImagemLivro=(ImageView)view.findViewById(R.id.ivImagemLivro);
 
-        tvNomeLivro.setText(book.get);
+        tvNomeLivro.setText(book.getTitle());
         tvDataLivro.setText(book.getPublishedDate());
         tvDescricao.setText(book.getDescription());
-    Picasso.get().load(book.getThumbnail).into(ivImagemLivro);
+//    Picasso.get().load(book.getThumbnail).into(ivImagemLivro);
 }
 
 }

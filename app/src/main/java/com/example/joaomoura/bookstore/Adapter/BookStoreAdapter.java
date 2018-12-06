@@ -55,7 +55,7 @@ public BookViewHolder onCreateViewHolder (ViewGroup viewGroup, int i){
         bookViewHolder.tvNomeLivro.setText(livros.get(position).getTitle());
         bookViewHolder.tvDataLivro.setText(livros.get(position).getPublishedDate());
         bookViewHolder.tvDetail.setText(livros.get(position).getDescription());
-        Picasso.get().load(livros.get(position).getThumbnail()).into(bookViewHolder.ivImagemLivro);
+//        Picasso.get().load(livros.get(position).getThumbnail()).into(bookViewHolder.ivImagemLivro);
 
     }
 
